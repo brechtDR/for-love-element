@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+      height: 200vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit';
+    import '../dist/src/for-love.js';
+    render(
+      html`
+        <for-love amount="40">
+          here is your page :)
+        </for-love>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>
