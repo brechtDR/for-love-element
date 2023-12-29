@@ -17,9 +17,11 @@
     import '../dist/src/for-love.js';
     render(
       html`
-        <for-love amount="40">
+        <div class="container">
+        <for-love amount="20" multicolor>
           here is your page :)
         </for-love>
+        </div>
       `,
       document.querySelector('#demo')
     );

@@ -1,9 +1,9 @@
 {
-  "name": "for-love",
+  "name": "for-love-element",
   "description": "Webcomponent for-love following open-wc recommendations",
   "license": "MIT",
-  "author": "for-love",
-  "version": "0.0.0",
+  "author": "Brecht De Ruyte",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
@@ -11,6 +11,7 @@
     ".": "./dist/src/index.js",
     "./for-love.js": "./dist/src/for-love.js"
   },
+  "repository": "https://github.com/brechtDR/for-love-element",
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
