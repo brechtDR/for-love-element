@@ -10,9 +10,9 @@ export class ForLove extends LitElement {
 
   static styles = css`
     :host {
-      --_sway: var(--fl-sway, 5);
-      --_size: var(--fl-heart-size, 3vw);
       --_color: var(--fl-heart-color, #F8C8DC);
+      --_size: var(--fl-heart-size, 3vw);
+      --_sway: var(--fl-sway, 5);
       --_iteration: var(--fl-iteration, infinite);
       --_duration: var(--fl-duration, 10s);
       --_ease: var(--fl-ease, ease-in-out);
