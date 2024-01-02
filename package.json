@@ -2,12 +2,12 @@
   "name": "for-love-element",
   "description": "Webcomponent for-love following open-wc recommendations",
   "private": false,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "exports": {
-    ".": "./dist/for-love-element.js"
+    ".": "./dist/for-love-element.mjs"
   },
   "repository": "https://github.com/brechtDR/for-love-element",
-  "main": "dist/src/for-love-element.js",
+  "main": "dist/src/for-love-element.mjs",
   "files": [
     "dist"
   ],

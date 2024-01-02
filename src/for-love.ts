@@ -57,37 +57,37 @@ export class ForLove extends LitElement {
       }
     }
 
-    @keyframes goToTopHeartPercentage {
-      0% {
-        opacity: 0;
-        top: 100%;
-        scale: .2;
-        margin-left: calc(var(--_sway) * 1px);
-      }
-      10% {
-        opacity: 1;
-      }
-      18% {
-        scale: 1;
-      }
-      10%, 30%, 50%, 70%, 90% {
-        margin-left: calc(var(--_sway) * -1px);
-      }
+      @keyframes goToTopHeartContained {
+        0% {
+          opacity: 0;
+          top: 100%;
+          scale: .2;
+          margin-left: calc(var(--_sway) * 1px);
+        }
+        10% {
+          opacity: 1;
+        }
+        18% {
+          scale: 1;
+        }
+        10%, 30%, 50%, 70%, 90% {
+          margin-left: calc(var(--_sway) * -1px);
+        }
 
-      20%, 40%, 60%, 80%, 100% {
-        margin-left: calc(var(--_sway) * 1px);
+        20%, 40%, 60%, 80%, 100% {
+          margin-left: calc(var(--_sway) * 1px);
+        }
+        80% {
+          opacity: 1;
+          scale: 1;
+        }
+        100% {
+          top: 0;
+          opacity: 0;
+          scale: 0;
+        }
       }
-      80% {
-        opacity: 1;
-        scale: 1;
-      }
-      100% {
-        top: calc(var(--heart-size) / -2);
-        opacity: 0;
-        scale: 0;
-      }
-    }
-    
+      
     .heart {
       position: absolute;
       top: 0;
@@ -130,7 +130,7 @@ export class ForLove extends LitElement {
     }
 
     :host([contained]) .heart {
-      animation-name: goToTopHeartPercentage;
+      animation-name: goToTopHeartContained;
     }
 
     @media (prefers-reduced-motion) {
