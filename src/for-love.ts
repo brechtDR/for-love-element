@@ -4,9 +4,32 @@ import { customElement, property } from 'lit/decorators.js'
 export class ForLove extends LitElement {
 
 
-    @property({ type: Number }) amount = 10;
     @property({ type: Boolean }) multicolor = false;
     @property({ type: Boolean }) scrollWithWindow = false;
+
+    private _maxAmount = 400; // Set your maximum value here
+
+    @property({ type: Number })
+    get amount() {
+        return this._amount;
+    }
+
+    set amount(value: number | string) {
+        const parsedValue = typeof value === 'number' ? value : parseFloat(value.toString());
+
+        // Check if the parsed value is a valid number
+        if (!isNaN(parsedValue)) {
+            // Set the value to the maximum if it exceeds the maximum allowed
+            this._amount = Math.min(parsedValue, this._maxAmount);
+        } else {
+            console.warn('Invalid value for amount property. Please provide a valid number.');
+        }
+
+        this.requestUpdate('amount'); // Notify LitElement to update the property
+    }
+
+    private _amount = 10;
+
 
     static styles = css`
     :host {

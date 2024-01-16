@@ -37,7 +37,7 @@ There are 3 options available
 
 | Attribute  | Behaviour                                                                               |
 |------------|-----------------------------------------------------------------------------------------|
-| amount     | Specify the amount of hearts being shown                                                |
+| amount     | Specify the amount of hearts being shown (max: 400)                                     |
 | multicolor | Set a bunch of multi color hearts <br/>(overrides the default color setting)            |
 | contained  | Use it for non-full page hearts where the parent element is set to `position: relative` |
 
