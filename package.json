@@ -2,7 +2,7 @@
   "name": "for-love-element",
   "description": "Webcomponent for-love following open-wc recommendations",
   "private": false,
-  "version": "1.0.9",
+  "version": "1.1.0",
   "exports": {
     ".": "./dist/for-love-element.mjs"
   },

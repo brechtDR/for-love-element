@@ -15,7 +15,7 @@ export class ForLove extends LitElement {
     }
 
     set amount(value: number | string) {
-        const parsedValue = typeof value === 'number' ? value : parseFloat(value.toString());
+        const parsedValue = typeof value === 'number' ? value : parseInt(value);
 
         // Check if the parsed value is a valid number
         if (!isNaN(parsedValue)) {
@@ -126,7 +126,7 @@ export class ForLove extends LitElement {
       animation-delay: calc(var(--delay) * .1s);
     }
 
-    .heart:after {
+    .heart::after, .heart::before {
       background-color: var(--_color);
       content: "";
       border-radius: 50%;
@@ -137,13 +137,7 @@ export class ForLove extends LitElement {
       left: calc(var(--_size) / 2);
     }
 
-    .heart:before {
-      background-color: var(--_color);
-      content: "";
-      border-radius: 50%;
-      position: absolute;
-      width:var(--_size);
-      height: var(--_size);
+    .heart::before {
       top: calc(var(--_size) / -2);
       left: 0;
     }
@@ -171,11 +165,11 @@ export class ForLove extends LitElement {
         <div class="for-love-hearts" part="hearts-container">
           ${Array(this.amount).fill('heart').map(index => {
             const randomNumberLeft = Math.floor(Math.random() * 101);
-            const randomNumberTop = Math.floor(Math.random() * 101);
+            const randomNumberDelay = Math.floor(Math.random() * 101);
             const colors = ['#4285F4', '#DB4437', '#F4B400', '#0F9D58'];
             const color = this.multicolor ? colors[Math.floor(Math.random() * colors.length)] : 'red';
 
-            return html`<div class="heart" data-item="${index}" style="--left: ${randomNumberLeft}%; --delay: ${randomNumberTop}; ${this.multicolor ? `--_color: ${color}` : ""}"></div>`;
+            return html`<div class="heart" data-item="${index}" style="--left: ${randomNumberLeft}%; --delay: ${randomNumberDelay}; ${this.multicolor ? `--_color: ${color}` : ""}"></div>`;
         })}
         </div>
 
